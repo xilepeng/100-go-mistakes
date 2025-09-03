@@ -43,3 +43,5 @@ func join2(s1, s2 string, max int) (string, error) {
 func concatenate(s1, s2 string) (string, error) {
 	return "", nil
 }
+
+

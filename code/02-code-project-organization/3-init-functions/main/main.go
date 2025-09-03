@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/xilepeng/100-Go-Mistakes/02-code-project-organization/3-init-functions/redis"
+	"github.com/xilepeng/100-go-mistakes/02-code-project-organization/3-init-functions/redis"
 )
 
 func init() {
