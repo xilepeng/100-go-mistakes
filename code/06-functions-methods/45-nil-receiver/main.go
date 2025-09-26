@@ -51,6 +51,7 @@ func (c Customer) Validate2() error {
 		if m == nil {
 			m = &MultiError{}
 		}
+
 		m.Add(errors.New("name is nil"))
 	}
 
@@ -61,8 +62,14 @@ func (c Customer) Validate2() error {
 }
 
 func main() {
-	customer := Customer{Age: 33, Name: "John"}
-	if err := customer.Validate1(); err != nil {
-		log.Fatalf("customer is invalid: %v", err)
+	// customer := Customer{Age: 33, Name: "John"}
+	// if err := customer.Validate1(); err != nil {
+	// 	log.Fatalf("customer is invalid: %v", err) // nil
+	// }
+
+	customer2 := Customer{Age: -33, Name: "John"}
+
+	if err := customer2.Validate2(); err != nil {
+		log.Fatalf("customer is invalid: %v", err) // age is negative
 	}
 }
