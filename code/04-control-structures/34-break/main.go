@@ -49,7 +49,7 @@ loop:
 		case <-ch:
 			// Do something
 		case <-ctx.Done():
-			break loop
+			break loop// 终止 loop 标签关联循环，而不是 select
 		}
 	}
 }

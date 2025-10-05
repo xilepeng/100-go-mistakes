@@ -8,7 +8,7 @@ import (
 func main() {
 	// Init
 	n := 1_000_000
-	m := make(map[int][128]byte)
+	m := make(map[int]*[128]byte)
 	printAlloc()
 
 	// Add elements
@@ -28,8 +28,8 @@ func main() {
 	runtime.KeepAlive(m)
 }
 
-func randBytes() [128]byte {
-	return [128]byte{}
+func randBytes() *[128]byte {
+	return &[128]byte{}
 }
 
 func printAlloc() {
@@ -37,3 +37,19 @@ func printAlloc() {
 	runtime.ReadMemStats(&m)
 	fmt.Printf("%d MB\n", m.Alloc/1024/1024)
 }
+
+
+/*
+m := make(map[int][128]byte)
+
+0 MB    // 分配 m 后
+317 MB  // 添加 100 万个元素后
+288 MB  // 删除 100 万个元素后
+
+
+m := make(map[int]*[128]byte)
+
+0 MB
+170 MB
+36 MB
+*/

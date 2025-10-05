@@ -16,8 +16,12 @@ func correct() {
 	src := []int{0, 1, 2}
 	dst := make([]int, len(src))
 	copy(dst, src)
-	fmt.Println(dst)
+	fmt.Println(dst) // dst = [0 1 2]
 
 	_ = src
 	_ = dst
+}
+
+func main(){
+	correct()
 }
