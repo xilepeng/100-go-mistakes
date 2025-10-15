@@ -1,8 +1,11 @@
 
 
 
-# Uber Go 语言编码规范
-
+1. [减少嵌套](#减少嵌套)
+2. [本地变量声明](#本地变量声明)
+3. [nil 是一个有效的 slice](#nil-是一个有效的-slice)
+4. [初始化 Struct 引用](#初始化-struct-引用)
+5. [字符串 string format](#字符串-string-format)
 
 
 

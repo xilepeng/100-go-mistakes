@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(strings.TrimRight("123oxo", "xo"))
+	fmt.Println(strings.TrimRight("123oxo", "xo")) // 123
 
 	fmt.Println(strings.TrimSuffix("123oxo", "xo"))
 

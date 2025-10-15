@@ -42,3 +42,13 @@ func getInput() []string {
 	}
 	return s
 }
+
+/*
+➜  39-string-concat git:(main) ✗ go test -bench=.
+BenchmarkConcatV1-10                  31          36779341 ns/op
+BenchmarkConcatV2-10                2841            408536 ns/op
+BenchmarkConcatV3-10               16041             73615 ns/op
+PASS
+ok      github.com/xilepeng/100-go-mistakes/05-strings/39-string-concat     6.337s
+
+*/
