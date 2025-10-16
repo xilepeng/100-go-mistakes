@@ -4,8 +4,8 @@ import "fmt"
 
 func main() {
 	s := Struct{id: "foo"}
-	defer s.print()
-	s.id = "bar"
+	defer s.print() //s会被立即计算
+	s.id = "bar"    //更新s.id（不可见）
 }
 
 type Struct struct {
@@ -13,5 +13,5 @@ type Struct struct {
 }
 
 func (s Struct) print() {
-	fmt.Println(s.id)
+	fmt.Println(s.id) //结果是foo
 }
