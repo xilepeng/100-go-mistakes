@@ -48,3 +48,7 @@ func MultiplyInt(a, b int) int {
 	}
 	return result
 }
+
+func main() {
+	Inc32(math.MaxInt32)
+}
