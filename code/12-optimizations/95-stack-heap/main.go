@@ -11,9 +11,10 @@ func listing1() {
 	println(c) //强制在堆上分配
 }
 
-// 
 //go:noinline
 func sumValue(x, y int) int {
+	// Go 运行时创建一个新的栈帧作为当前 goroutine 栈的一部分。
+	// x、y、z 在当前栈帧中一起被分配
 	z := x + y
 	return z
 }
@@ -28,7 +29,7 @@ func listing2() {
 }
 
 //go:noinline
-func sumPtr(x, y int) *int {
+func sumPtr(x, y int) *int { //返回一个指针
 	z := x + y
 	return &z
 }
