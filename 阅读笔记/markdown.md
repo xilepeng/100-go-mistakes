@@ -8,7 +8,7 @@
 $\color{Purple}{Purple 紫色}$
 
 
-![](../images/MarkDown/font-color.png)
+![](../images/font-color.png)
 ---
 
 
