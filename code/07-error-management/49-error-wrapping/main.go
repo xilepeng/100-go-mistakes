@@ -41,7 +41,7 @@ func listing2() error {
 func listing3() error {
 	err := bar()
 	if err != nil {
-		return fmt.Errorf("bar failed: %w", err)
+		return fmt.Errorf("bar failed: %w", err)//添加上下文，可获取原始错误
 	}
 	// ...
 	return nil
