@@ -6,7 +6,7 @@ func bad() {
 	src := []int{0, 1, 2}
 	var dst []int
 	copy(dst, src)
-	fmt.Println(dst)
+	fmt.Println(dst) //dst=[]
 
 	_ = src
 	_ = dst
@@ -22,6 +22,7 @@ func correct() {
 	_ = dst
 }
 
-func main(){
+func main() {
+	bad()
 	correct()
 }
