@@ -1,0 +1,18 @@
+package main
+
+import "testing"
+
+// func BenchmarkFib10(b *testing.B) {
+// 	// run the Fib function b.N times
+// 	for n := 0; n < b.N; n++ {
+// 		Fib(10)
+// 	}
+// }
+
+
+func BenchmarkFibFast10(b *testing.B) {
+	// run the Fib function b.N times
+	for n := 0; n < b.N; n++ {
+		FibFast(10)
+	}
+}
