@@ -2,15 +2,15 @@ goos: darwin
 goarch: arm64
 pkg: github.com/xilepeng/100-go-mistakes/89-benchmark
 cpu: Apple M4
-BenchmarkFib10-10    	 5023615	       233.6 ns/op
-BenchmarkFib10-10    	 5116920	       233.5 ns/op
-BenchmarkFib10-10    	 5125453	       234.3 ns/op
-BenchmarkFib10-10    	 5035672	       237.3 ns/op
-BenchmarkFib10-10    	 5092021	       234.4 ns/op
-BenchmarkFib10-10    	 4409794	       240.8 ns/op
-BenchmarkFib10-10    	 5103278	       238.2 ns/op
-BenchmarkFib10-10    	 5109962	       234.6 ns/op
-BenchmarkFib10-10    	 5047156	       235.7 ns/op
-BenchmarkFib10-10    	 5139075	       233.7 ns/op
+BenchmarkFib10-10    	 5015654	       233.0 ns/op
+BenchmarkFib10-10    	 5218470	       234.0 ns/op
+BenchmarkFib10-10    	 5076512	       231.4 ns/op
+BenchmarkFib10-10    	 5211609	       233.9 ns/op
+BenchmarkFib10-10    	 5186449	       232.6 ns/op
+BenchmarkFib10-10    	 5120005	       248.3 ns/op
+BenchmarkFib10-10    	 5123631	       233.2 ns/op
+BenchmarkFib10-10    	 5033410	       234.5 ns/op
+BenchmarkFib10-10    	 5185760	       231.1 ns/op
+BenchmarkFib10-10    	 5180949	       234.4 ns/op
 PASS
-ok  	github.com/xilepeng/100-go-mistakes/89-benchmark	14.986s
+ok  	github.com/xilepeng/100-go-mistakes/89-benchmark	15.038s

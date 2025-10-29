@@ -1,0 +1,26 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/xilepeng/100-go-mistakes/11-testing/89-benchmark/wrong-assumptions
+cpu: Apple M4
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4812 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4854 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4823 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4824 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4818 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4833 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4867 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4834 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4812 ns/op
+BenchmarkAtomicStoreInt32-10    	1000000000	         0.4807 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4810 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4846 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4836 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4800 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4796 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4877 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4899 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4861 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4860 ns/op
+BenchmarkAtomicStoreInt64-10    	1000000000	         0.4821 ns/op
+PASS
+ok  	github.com/xilepeng/100-go-mistakes/11-testing/89-benchmark/wrong-assumptions	11.310s
