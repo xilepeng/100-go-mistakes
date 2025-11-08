@@ -2,7 +2,6 @@ package main
 
 func main() {
 	newWatcher()
-
 	// Run the application
 }
 

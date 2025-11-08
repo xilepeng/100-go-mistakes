@@ -28,9 +28,10 @@ func handler2(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
+	// 异步处理发布操作，如果上下文被取消，发布消息的操作可以被中断
+	// 不管写回 HTTP 响应需要多长时间，我们都可以调用 publish
 	go func() {
-		err := publish(context.Background(), response)
+		err := publish(context.Background(), response) // 使用空上下文而不是 HTTP 请求上下文
 		// Do something with err
 		_ = err
 	}()
@@ -38,14 +39,18 @@ func handler2(w http.ResponseWriter, r *http.Request) {
 	writeResponse(response)
 }
 
+// 一旦我们返回响应，上下文就会被取消，异步操作也可能会被意外停止。
+// 最佳实践：创建自定义上下文，不携带取消信号
+// 传递给 publish 的上下文永远不会过期或被取消，但它将携带父上下文的值
 func handler3(w http.ResponseWriter, r *http.Request) {
 	response, err := doSomeTask(r.Context(), r)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
-
+	// 调用 publish 并分离取消信号
 	go func() {
+		// 在 HTTP 上下文之上使用分离
 		err := publish(detach{ctx: r.Context()}, response)
 		// Do something with err
 		_ = err
@@ -54,6 +59,7 @@ func handler3(w http.ResponseWriter, r *http.Request) {
 	writeResponse(response)
 }
 
+// 创建自定义上下文，不携带取消信号
 type detach struct {
 	ctx context.Context
 }
