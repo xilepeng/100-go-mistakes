@@ -26,7 +26,7 @@ func main() {
 func (s *Store) storeCustomers(customers []Customer) {
 	for _, customer := range customers {
 		fmt.Printf("%p\n", &customer) //
-		s.m[customer.ID] = &customer  //只创建一个固定地址的变量
+		s.m[customer.ID] = &customer  //创建不同地址的变量
 	}
 }
 
