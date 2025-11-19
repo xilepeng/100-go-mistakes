@@ -52,14 +52,14 @@ func (c *Cache) AverageBalance2() float64 {
 
 func (c *Cache) AverageBalance3() float64 {
 	c.mu.RLock()
-	m := make(map[string]float64, len(c.balances))
+	m := make(map[string]float64, len(c.balances)) // 深拷贝
 	for k, v := range c.balances {
 		m[k] = v
 	}
 	c.mu.RUnlock()
 
 	sum := 0.
-	for _, balance := range m {
+	for _, balance := range m { //迭代在临界区之外的副本上完成
 		sum += balance
 	}
 	return sum / float64(len(m))
